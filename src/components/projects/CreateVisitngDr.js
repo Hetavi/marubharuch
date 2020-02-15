@@ -10,15 +10,36 @@ class CreateProject extends Component {
     sp: '',
     visitday: '',
     visitHr: '',
-    stats: ''
+    stats: '',
+    visitday1:null,
+    visitday:[]
   }
 
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
+    console.log(e.target.value)
    
   }
+  handlecheckbox=(e)=>{
+    this.setState({
+
+    })
+    if (this.state.visitday.includes(e.target.id)){
+      console.log('loop operated')
+      this.state.visitday= this.state.visitday.filter(val => val !== e.target.id);
+    }else {
+      this.state.visitday.push(e.target.id)
+    }
+      
+    
+    
+    console.log(this.state.visitday.includes(e.target.id))
+    console.log(this.state.visitday)
+  }
+
+
   handleSubmit = (e) => {
     e.preventDefault();
  
@@ -47,9 +68,46 @@ class CreateProject extends Component {
             <input type="text" id='visitday' onChange={this.handleChange} />
             <label htmlFor="visitday">Visit Day/Days</label>
           </div>
+<div>
+<p>
+      <label>
+        <input id="sun" type="checkbox"    onChange={this.handlecheckbox} />
+        <span>Sun</span>
+        </label>
+        <label>
+        <input id="mon" type="checkbox" className="filled-in" onChange={this.handlecheckbox} />
+        <span>Mon</span>
+        </label>
+        <label>
+        <input  id="tue" type="radio" onChange={this.handleChange}  />
+        <span>Tue</span>
+        </label>
+        <label>
+        <input id="wed" type="radio"  />
+        <span>Wed</span>
+        </label>
+        <label>
+        <input id="visitday4" type="radio" />
+        <span>Thu</span>
+        </label>
+        <label>
+        <input id="visitday5" type="radio" />
+        <span>Fri</span>
+        </label>
+        <label>
+        <input id="visitday6" type="radio" />
+        <span>Sat</span>
+        
+        
+        
+      </label>
+    </p>
+</div>
+
+
           <div className="input-field">
             <input type="text" id='visitHr' onChange={this.handleChange} />
-            <label htmlFor="visitHr">Sim card</label>
+            <label htmlFor="visitHr">Visiting Hour</label>
           </div>
          
           <div className="input-field">
