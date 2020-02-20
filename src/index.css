@@ -12,6 +12,11 @@ body {
   background-color: #95e8f3;
   min-height: 100%;
 }
+<<<<<<< Updated upstream
+=======
+span { margin: 3px;}
+
+>>>>>>> Stashed changes
 .container{
   margin: 0;
   padding: 0;
