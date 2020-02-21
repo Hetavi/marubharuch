@@ -16,11 +16,12 @@ service cloud.firestore {
     match /projects/{authorFirstName} {
  allow write: if exists(/databases/$(database)/documents/admin/$(request.auth.uid));
 			allow read:if true;    
-    }
-    match/users/{firstname}{
-    allow write : if true;
-    allow read:if true;
-    }
+    			}
+   
+   match/users/{firstname}{
+			    allow write : if true;
+			    allow read:if true;
+			    }
     match/admin/{userid}{
      allow write: if request.auth.uid == "3YudleWleYhzqMPMMFqSC9z7wnR2";
      allow read:if true;
