@@ -1,0 +1,48 @@
+owner- gmail which is used to create firebase account
+Back-end - server side.
+we have used firebase
+    Firebase is a Backend-as-a-Service — BaaS on google cloud paltform
+    don’t need to manage servers,
+          athentication
+          data storage
+          file storge
+          hosting
+ what we have done on firebase
+          created project, add app , enable hosting, enable google authentication ( we can use multiple-facebook, tweeter,github,etc)
+          created data base with firestore
+          add three collection (userd, admin and notice)
+          Modifide rules for that
+          user -any budy can write after login with their gmail
+          admin- only owner can write, every budy can read(owner means email which is used for creating firebase account)
+          notice -only admin can write,
+    there are main for things requird for any data base -CRUD-create, read, update and delete
+    depanding on your signin email you can do that things
+    for administration of daily activity there are two role-user and admin
+    admin can do all three things- cru , can not delete
+    Admin can not write in user collection. 
+    user can only read notice and can read /wrte their profile in user collection
+    so basically in user any buddy can read all data and write their own data
+    
+    Notice -fields- 
+    dept, 
+    title 
+    displayon=true or false
+    body/matter 
+    following fields created/edited automatic
+    author name , created at(firebase server time)
+    admin can edit any notice, but their name is loged in database
+
+front-end-client side
+
+   React is a JavaScript library for building user interfaces. It is maintained by Facebook
+   Materialize is a modern responsive CSS framework based on Material Design by Google.
+   ES6=javascript 6
+   components 
+   navbar- for navigation
+   sign in/sign up
+   dashboard-data read operation-collect all data of notice for display true
+   noticesammary-display dept,title,auther name and createda  at for all data
+   we can search based on title/dept
+   notice Details- read full notice (any one at a time)
+   if your roal is admin then you cn edit same- update operation
+   create notice -for right operation
